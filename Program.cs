@@ -21,6 +21,12 @@ namespace arbolb
 
             Console.WriteLine("Recorrido en orden:");
             a.RecorrerEnOrden(a.Raiz);
+            Console.WriteLine("");
+            Console.WriteLine("Recorrido en pre:");
+            a.RecorrerPreOrden(a.Raiz);
+            Console.WriteLine("");
+            Console.WriteLine("Recorrido en pos:");
+            a.RecorrerPosOrden(a.Raiz);
         }
     }
 }

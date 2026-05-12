@@ -25,6 +25,20 @@ namespace arbolb
 
             return raiz;
         }
+        public bool Buscar(Nodo raiz, int objetivo)
+        {
+            if (raiz == null) return false;
+            if (raiz.valor == objetivo) return true;
+
+            if (objetivo < raiz.valor)
+            {
+                return Buscar(raiz.izq, objetivo);
+            }
+            else
+            {
+                return Buscar(raiz.der, objetivo);
+            }
+        }
         public void RecorrerEnOrden(Nodo raiz)
         {
             if (raiz != null)
@@ -34,6 +48,25 @@ namespace arbolb
                 RecorrerEnOrden(raiz.der);
             }
         }
+        public void RecorrerPreOrden(Nodo raiz)
+        {
+            if (raiz != null)
+            {
+                Console.Write(raiz.valor + " ");
+                RecorrerPreOrden(raiz.izq);
+                RecorrerPreOrden(raiz.der);
+            }
+        }
+        public void RecorrerPosOrden(Nodo raiz)
+        {
+            if (raiz != null)
+            {
+                RecorrerPreOrden(raiz.izq);
+                RecorrerPreOrden(raiz.der);
+                Console.Write(raiz.valor + " ");
+            }
+        }
+
 
     }
 }
